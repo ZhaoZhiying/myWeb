@@ -17,6 +17,7 @@
     </style>
 </head>
 <body>
+
 <header class="header">
     <div class="header-inner clearfix">
         <a class="logo" href="#" alt="logo">
@@ -36,9 +37,11 @@
             </nav>
     </div>
 </header>
+
 <div class="banner">
     <div class="mask"></div>
 </div>
+
 <main>
     <div class="userCard">
       <div class="theTop clearfix">
@@ -92,9 +95,81 @@
             </a>
         </div>
     </div>
-    <a class="button" href="#">下载 PDF 简历</a>
-    <p>一段自我介绍</p>
+
+    <p class="btn-wrap">
+        <a class="btn" href="#">下载 PDF 简历</a>
+    </p>
+
+    <p class="selfIntroduction">你好！我叫罗伯特·史密斯。专门从事前端开发的高级Web开发人员。对动态web项目的开发周期的所有阶段都有经验。精通多种编程语言，包括JavaScript、SQL和c.Stng背景，包括项目管理和客户关系。</p>
 </main>
+
+<section class="skills">
+    <h2>专业技能</h2>
+    <ol class="clearfix">
+        <li>HTML 5 & CSS 3
+                <div class="progressBar">
+                        <div class="progress"></div>
+                </div>
+        </li>
+
+        <li>JavaScript
+                <div class="progressBar">
+                        <div class="progress"></div>
+                </div>
+        </li>
+        <li>jQuery
+                <div class="progressBar">
+                        <div class="progress" style="width:50%"></div>
+                </div>
+        </li>
+        <li>Vue
+                <div class="progressBar">
+                        <div class="progress" style="width:60%"></div>
+                </div>
+        </li>
+        <li>React
+                <div class="progressBar">
+                        <div class="progress" style="width:90%"></div>
+                </div>
+        </li>
+        <li>HTTP
+                <div class="progressBar">
+                        <div class="progress" style="width:40%"></div>
+                </div>
+        </li>
+    </ol>
+</section>
+<section class="portfolio">
+        <h2>作品集</h2>
+        <nav>
+            <ol class="clearfix">
+                    <li id="portfolio1">所有</li>
+                    <li id="portfolio2">框架</li>
+                    <li id="portfolio3">原生JS & CSS</li>
+            </ol>
+            <div id="portfolioBar" class="bar state-1">
+                <div class="bar-inner"></div>
+            </div>
+        </nav>
+            <script>
+                    portfolio1.onclick = function(){
+                        portfolioBar.className = 'bar state-1'
+                    }
+                    portfolio2.onclick = function(){
+                        portfolioBar.className = 'bar state-2'
+                    }
+                    portfolio3.onclick = function(){
+                        portfolioBar.className = 'bar state-3'
+                    }
+                </script>
+
+        <div class="works clearfix">       
+           <div class="big"><img src="./img/1.jpg" alt="作品1"></div>
+           <div class="small1"><img src="./img/2.jpg" alt="作品2"></div>
+           <div class="small2"><img src="./img/3.jpg" alt="作品3"></div>
+        </div>    
+
+    </section>
 
 <footer></footer>
 </body>

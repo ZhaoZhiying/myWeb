@@ -179,6 +179,7 @@ a{
     padding: 19px 90px;
     display: inline-block;
     margin: 34px 0;
+    transition: box-shadow 1s;
 }
 .btn-wrap .btn:hover{
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);

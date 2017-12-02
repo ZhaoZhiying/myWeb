@@ -69,11 +69,11 @@
             </a>    
             <nav class="menu">
                 <ul class="clearfix">
-                    <li><a href="#">关于</a></li>
-                    <li><a href="#">技能</a></li>
+                    <li><a href="#siteAbout">关于</a></li>
+                    <li><a href="#siteSkills">技能</a></li>
                     <li><a href="#">工作经验</a></li>
                     <li class="menuTigger">
-                        <a href="#">作品</a>
+                        <a href="#siteWorks">作品</a>
                         <ul class="submenu">
                             <li>作品1</li>
                             <li>作品2</li>
@@ -101,7 +101,7 @@
 </div>
 
 <main>
-    <div class="userCard">
+    <div class="userCard" id="siteAbout">
       <div class="theTop clearfix">
         <div class="picture">
             <img src="./img/avatar.jpg" alt="头像">
@@ -161,7 +161,7 @@
     <p class="selfIntroduction">你好！我叫罗伯特·史密斯。专门从事前端开发的高级Web开发人员。对动态web项目的开发周期的所有阶段都有经验。精通多种编程语言，包括JavaScript、SQL和c.Stng背景，包括项目管理和客户关系。</p>
 </main>
 
-<section class="skills">
+<section class="skills" id="siteSkills">
     <h2>专业技能</h2>
     <ol class="clearfix">
         <li>HTML 5 & CSS 3
@@ -196,7 +196,7 @@
         </li>
     </ol>
 </section>
-<section class="portfolio">
+<section class="portfolio" id="siteWorks">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -239,13 +239,25 @@
             }  
           }
 
-          let liTags = document.querySelectorAll('nav.menu>ul>li')/*匹配menu里所有li*/
+          let liTags = document.querySelectorAll('nav.menu>ul>li')//匹配menu里所有li
           for(let i =0; i<liTags.length; i++){
-              liTags[i].onmouseenter = function(x){ /*事件在鼠标指针移动到元素上时触发*/
+              liTags[i].onmouseenter = function(x){ //事件在鼠标指针移动到元素上时触发
                   x.currentTarget.classList.add('active')
               }
-              liTags[i].onmouseleave = function(x){/*在鼠标指针移出元素上时触发*/
+              liTags[i].onmouseleave = function(x){//在鼠标指针移出元素上时触发
                   x.currentTarget.classList.remove('active')
+              }
+          }
+
+          let aTags = document.querySelectorAll('nav.menu>ul>li>a')//匹配menu里所有a
+          for(let i=0; i <aTags.length; i++){
+              aTags[i].onclick = function(x){
+                x.preventDefault() //阻止事件的所有默认动作，取消浏览器默认跳转
+                let a = x.currentTarget //获取a标签
+                let href = a.getAttribute('href') //a.getAttribute('href')用户写什么是什么;a.href是带http协议（浏览器处理过的）
+                let element = document.querySelector(href) //根据href获取到一个元素
+                let top = element.offsetTop //获取这个元素距页面最顶端的距离
+                window.scrollTo(0,top-80) //滑动到的位置：x轴不变，y轴top-80
               }
           }
         </script>

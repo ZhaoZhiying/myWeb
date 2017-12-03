@@ -17,6 +17,13 @@ a{
 [data-x].active{
     outline: 1px solid red;
 }
+[data-x].offset{
+    transform: translateY(100px);
+}
+[data-x]{
+    transform: translateY(0);
+    animation: all 3s;
+}
 .header{
     color: #c1bebc;
     position: fixed;
@@ -276,12 +283,18 @@ a{
     background: rgb(250,225,225);
     border-radius: 4px;
     margin-top: 6px;
+    overflow: hidden;
 }
 .skills .progressBar>.progress{
     height: 100%;
     width: 80%;
     background: rgb(230,104,106);
     border-radius: 4px;
+    transform: translateX(0);
+    transition: all 1s;
+}
+.skills.offset .progressBar>.progress{
+    transform: translateX(-100%);
 }
 .portfolio{
     max-width: 940px;

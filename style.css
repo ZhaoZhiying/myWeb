@@ -9,20 +9,23 @@ a{
     margin: 0;
     padding: 0;
 }
+ul, ol { 
+    list-style: none; 
+}
+h1,h2,h3,h4,h5,h6{ 
+    font-weight: normal; 
+}
 .clearfix::after{
     content: '';
     display: block;
     clear: both;
-}
-[data-x].active{
-    outline: 1px solid red;
 }
 [data-x].offset{
     transform: translateY(100px);
 }
 [data-x]{
     transform: translateY(0);
-    animation: all 3s;
+    animation: all 0.5s;
 }
 .header{
     color: #c1bebc;
@@ -103,6 +106,10 @@ a{
     color: #666;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
+@keyframes menuSlide{
+    0%{width: 0;}
+    100%{width: 100%;}
+}
 .header .submenu>li{
     white-space: nowrap;/*规定段落中的文本不进行换行*/
     padding: 5px 5px;
@@ -110,10 +117,6 @@ a{
 .header li.active>.submenu{
     display: block;
     animation: submenuSlide 0.3s;
-}
-@keyframes menuSlide{
-    0%{width: 0;}
-    100%{width: 100%;}
 }
 @keyframes submenuSlide{
     0%{margin-right: 100%;}

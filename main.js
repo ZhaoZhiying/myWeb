@@ -1,11 +1,11 @@
   //添加延迟   
   setTimeout(function(){
     siteWelcome.classList.remove('active')    
-  },100)
-    //添加动画
+  },1000)
+  //添加动画
   setTimeout(function(){
     findClosest()
-  },0)
+  },1000)
   //添加 offset
   let specialTags = document.querySelectorAll('[data-x]')
   for(let i = 0; i < specialTags.length; i++){

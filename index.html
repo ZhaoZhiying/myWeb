@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>我的个人网站</title>
-    <link rel="stylesheet" href="style.css">
     <script src="//at.alicdn.com/t/font_230429_cmtq9u407q035wmi.js"></script>
     <style type="text/css">
+        .icon {
+            width: 1em; 
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
         .loading{
             width: 200px;
             height: 200px;
@@ -31,14 +37,8 @@
             animation-delay: 0.75s;
         }
         @keyframes change{
-            0%{width: 0;height: 0;opacity: 1;/*透明度*/}
-            100%{width: 100px;height: 100px;opacity: 0;}
-        }
-        .icon {
-           width: 1em; height: 1em;
-           vertical-align: -0.15em;
-           fill: currentColor;
-           overflow: hidden;
+            0%{width: 0; height: 0; opacity: 1;/*透明度*/}
+            100%{width: 100px; height: 100px; opacity: 0;}
         }
         .siteWelcome{
             display: none;
@@ -56,9 +56,11 @@
             display: flex;
         }
     </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-<div data-x class="siteWelcome" id="siteWelcome">
+<div data-x class="siteWelcome active" id="siteWelcome">
         <div class="loading"></div>
 </div>
 
@@ -128,7 +130,7 @@
             <hr>
             <dl>
                 <dt>年龄</dt>
-                <dd>26</dd>
+                <dd>18</dd>
                 <dt>所在地</dt>
                 <dd>北京</dd>
                 <dt>邮箱</dt>
@@ -177,7 +179,7 @@
 <section data-x class="skills" id="siteSkills">
     <h2>专业技能</h2>
     <ol class="clearfix">
-        <li>HTML 5 & CSS 3
+        <li>HTML 5 &amp; CSS 3
                 <div class="progressBar">
                         <div class="progress"></div>
                 </div>
@@ -209,139 +211,40 @@
         </li>
     </ol>
 </section>
-<section data-x class="portfolio" id="siteWorks">
-        <h2>作品集</h2>
-        <nav>
-            <ol class="clearfix">
-                    <li id="portfolio1">所有</li>
-                    <li id="portfolio2">框架</li>
-                    <li id="portfolio3">原生JS & CSS</li>
-            </ol>
-            <div id="portfolioBar" class="bar state-1">
-                <div class="bar-inner"></div>
-            </div>
-        </nav>
-            <script>
-                    portfolio1.onclick = function(){
-                        portfolioBar.className = 'bar state-1'
-                    }
-                    portfolio2.onclick = function(){
-                        portfolioBar.className = 'bar state-2'
-                    }
-                    portfolio3.onclick = function(){
-                        portfolioBar.className = 'bar state-3'
-                    }
-                </script>
+    <section data-x class="portfolio" id="siteWorks">
+            <h2>作品集</h2>
+            <nav>
+                <ol class="clearfix">
+                        <li id="portfolio1">所有</li>
+                        <li id="portfolio2">框架</li>
+                        <li id="portfolio3">原生JS & CSS</li>
+                </ol>
+                <div id="portfolioBar" class="bar state-1">
+                    <div class="bar-inner"></div>
+                </div>
+            </nav>
+                <script>
+                        portfolio1.onclick = function(){
+                            portfolioBar.className = 'bar state-1'
+                        }
+                        portfolio2.onclick = function(){
+                            portfolioBar.className = 'bar state-2'
+                        }
+                        portfolio3.onclick = function(){
+                            portfolioBar.className = 'bar state-3'
+                        }
+                    </script>
 
-        <div class="works clearfix">       
-           <div class="big"><img src="./img/1.jpg" alt="作品1"></div>
-           <div class="small1"><img src="./img/2.jpg" alt="作品2"></div>
-           <div class="small2"><img src="./img/3.jpg" alt="作品3"></div>
-        </div>    
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
-        <script>
-          /*setTimeout(function(){//故意延迟时间
-            siteWelcome.classList.remove('active')
-          },1000)*/
-
-          //添加offset
-          let specialTags = document.querySelectorAll('[data-x]')
-          for(let i = 0; i < specialTags.length; i++){
-            specialTags[i].classList.add('offset')
-          }
-
-          setTimeout(function(){
-            findClosest()
-          },100)
-
-          window.onscroll = function(x){//页面滚动事件
-            if(window.scrollY > 0){//获取页面滚动时的高度
-                header.classList.add('sticky')//滚动时加sticky
-            }else{
-                header.classList.remove('sticky')
-            }
-            findClosest()
-          }
-
-          function findClosest(){
-            let specialTags = document.querySelectorAll('[data-x]')//返回'含有 data-x 的' 
-            let minIndex = 0 //minIndex指离窗口顶部最近的元素
-            for(let i = 0; i < specialTags.length; i++){
-                if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
-                    minIndex = i
-                }
-            }
-
-            specialTags[minIndex].classList.remove('offset')//当滑动到这个标签就去除offset
-            let id = specialTags[minIndex].id //找到当前高亮的id
-            let a = document.querySelector('a[href="#'+ id + '"]')//获取a 比如：id == 'siteAbout' 'a[href="#siteAbout"]'
-            let li = a.parentNode//获取a的父节点li
-            let brothersAndMe = li.parentNode.children //获取li父节点的多有子节点
-            for(let i=0; i<brothersAndMe.length; i++){
-                brothersAndMe[i].classList.remove('highlight')
-            }
-            li.classList.add('highlight')
-          }
-          let liTags = document.querySelectorAll('nav.menu>ul>li')//匹配menu里所有l
-          for(let i =0; i<liTags.length; i++){
-              liTags[i].onmouseenter = function(x){ //事件在鼠标指针移动到元素上时触发
-                  x.currentTarget.classList.add('active')
-              }
-              liTags[i].onmouseleave = function(x){//在鼠标指针移出元素上时触发
-                  x.currentTarget.classList.remove('active')
-              }
-          }
-
-          let aTags = document.querySelectorAll('nav.menu>ul>li>a')//匹配menu里所有a
-          // 设置动画循环,tween.js缓动
-          function animate(time){
-              requestAnimationFrame(animate);
-              TWEEN.update(time);
-          }
-          requestAnimationFrame(animate);
-
-          for(let i=0; i < aTags.length; i++){
-              aTags[i].onclick = function(x){
-                x.preventDefault() //阻止事件的所有默认动作，取消浏览器默认跳转
-                let a = x.currentTarget //获取a标签
-                let href = a.getAttribute('href') //a.getAttribute('href')用户写什么是什么;a.href是带http协议（浏览器处理过的）
-                let element = document.querySelector(href) //根据href获取到一个元素
-                let top = element.offsetTop //获取这个元素距页面最顶端的距离
-                
-                let currentTop = window.scrollY//当前高度
-                let targetTop = top - 80 //目标高度
-                let s = targetTop - currentTop //路程
-                var coords = { y : currentTop};//开始位置
-                var t = Math.abs((s/100)*300)//时间
-                if(t>500){ t = 500 } //最长时间500毫秒
-                var tween = new TWEEN.Tween(coords)//开始位置
-                    .to({ y : targetTop},t) //结束位置和时间
-                    .easing(TWEEN.Easing.Cubic.InOut)//缓动类型
-                    .onUpdate(function(){//coords.y已经变了
-                        window.scrollTo(0,coords.y)//更新界面
-                    })
-                    .start(); //开始缓动
-                /*简易写法
-                let n = 25 //一共动多少次
-                let t = 500 / n  //多长时间动一次
-                let currentTop = window.scrollY//当前高度
-                let targetTop = top - 80 //目标高度
-                let s = (targetTop - currentTop) / n //每次动的距离
-                let i = 0 
-                let id = setInterval(() => {
-                    if(i===n){ //如果第25次
-                        window.clearInterval(id) //闹钟停止
-                        return
-                    }
-                    i = i + 1 //第几次
-                    window.scrollTo(0,currentTop + s * i) //滚动到文档中的某个坐标。
-                },t)  */  
-              }
-          }
-        </script>
+            <div class="works clearfix">       
+            <div class="big"><img src="./img/1.jpg" alt="作品1"></div>
+            <div class="small1"><img src="./img/2.jpg" alt="作品2"></div>
+            <div class="small2"><img src="./img/3.jpg" alt="作品3"></div>
+            </div>    
     </section>
 
 <footer></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
+<script src="./main.js"></script>
 </body>
 </html>

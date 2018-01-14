@@ -309,6 +309,7 @@ h1,h2,h3,h4,h5,h6{
     margin-right: auto; 
     font-family: "open sans"; 
     text-align: center; 
+    margin-bottom: 100px;
 }
 .portfolio h2{
     color: #3d4451;
@@ -316,79 +317,15 @@ h1,h2,h3,h4,h5,h6{
     text-align: center; 
     margin-bottom: 30px; 
 }
-.portfolio nav{ 
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
-    color: #000;
+.portfolio .swiper-container {
+    width: 940px;
+    height: 400px;
 }
-.portfolio nav>ol{
-    color: #000;
-    font-size: 13px;
-    font-weight: 600;
-    list-style: none;
-    display: inline-block;
-    vertical-align: top;
+.portfolio .swiper-button-prev,
+.portfolio .swiper-button-next{
+    background-color: rgba(255,255,255,0.2);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
 }
-.portfolio nav>ol>li{
-    float: left;
-    padding-right: 50px;
-    cursor:pointer;
-}
-.portfolio nav>ol>li:nth-child(3){
-    padding-right: 0;
-}
-.portfolio nav .bar{
-    height: 4px;
-    background: #fff;
-    border-radius: 4px;
-    margin-top: 8px;
-    margin-bottom: 30px;
-}
-.portfolio nav .bar-inner{
-    height: 100%;
-    background: rgb(230, 104, 106);
-    border-radius: 4px;
-    width: 14%;
-    transition: all 0.5s;
-}
-.portfolio nav .bar.state-1 .bar-inner{
-    margin-left: 0;
-    width: 14%;
-}
-.portfolio nav .bar.state-2 .bar-inner{
-    margin-left: 74px;
-    width: 14%;
-}
-.portfolio nav .bar.state-3 .bar-inner{
-    margin-left: 150px;
-    width: 34%;
-}
-.portfolio .works{
-    height: 597px;
-    position: relative;
-    margin-bottom: 100px;
-}
-.portfolio .works .big,
-.portfolio .works .small1,
-.portfolio .works .small2{
-    position: absolute;
-    padding: 0 10px;
-    margin-bottom: 20px;
-}
-.portfolio .works .big{
-    height: 576px;
-    overflow: hidden;
-    left: 0;
-}
-.portfolio .works .small1{
-    height: 278px;
-    overflow: hidden;
-    right: 0;
-}
-.portfolio .works .small2{
-    height: 278px;
-    overflow: hidden;
-    right: 0;
-    top: 298px;
-}
+

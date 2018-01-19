@@ -265,26 +265,26 @@ h1,h2,h3,h4,h5,h6{
     margin-bottom: 76px;
     color: #333;
 }
-.skills{
+section.skills{
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 76px;
     font-family: "open sans";
 }
-.skills h2{
+section.skills h2{
     color: #3d4451;
     font-size: 34px;
     text-align: center;
     margin-bottom: 24px;
 }
-.skills ol{
+section.skills ol{
     background: #fff;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     list-style: none;
     padding: 22px 35px;
 }
-.skills ol>li{
+section.skills ol>li{
     font-size: 14px;
     color: rgb(61, 68, 81);
     float: left;
@@ -292,14 +292,14 @@ h1,h2,h3,h4,h5,h6{
     box-sizing: border-box;
     padding: 20px 15px;
 }
-.skills .progressBar{
+section.skills .progressBar{
     height: 5px;
     background: rgb(250,225,225);
     border-radius: 4px;
     margin-top: 6px;
     overflow: hidden;
 }
-.skills .progressBar>.progress{
+section.skills .progressBar>.progress{
     height: 100%;
     width: 80%;
     background: rgb(230,104,106);
@@ -307,10 +307,10 @@ h1,h2,h3,h4,h5,h6{
     transform: translateX(0);
     transition: all 1s;
 }
-.skills.offset .progressBar>.progress{
+section.skills.offset .progressBar>.progress{
     transform: translateX(-100%);
 }
-.portfolio{
+section.portfolio{
     max-width: 940px;
     margin-left: auto;
     margin-right: auto; 
@@ -318,21 +318,38 @@ h1,h2,h3,h4,h5,h6{
     text-align: center; 
     margin-bottom: 100px;
 }
-.portfolio h2{
+section.portfolio h2{
     color: #3d4451;
     font-size: 34px;
     text-align: center; 
     margin-bottom: 30px; 
 }
-.portfolio .swiper-container {
+section.portfolio .swiper-container {
     width: 940px;
     height: 400px;
 }
-.portfolio .swiper-button-prev,
-.portfolio .swiper-button-next{
+section.portfolio .swiper-button-prev,
+section.portfolio .swiper-button-next{
     background-color: rgba(255,255,255,0.2);
     width: 64px;
     height: 64px;
     border-radius: 50%;
+}
+section.message{
+    max-width: 940px;
+    color: #3d4451;
+    font-family: "open sans";
+    margin: 0 auto;
+}
+section.message h2{
+    text-align: center;
+    padding-bottom: 16px;
+}
+section.message .messageList{
+    border: 1px #ddd solid;
+}
+section.message .messageList>li{
+    padding: 16px;
+    border-bottom: 1px #ddd solid;
 }
 
